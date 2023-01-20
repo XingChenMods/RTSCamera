@@ -177,9 +177,22 @@ namespace RTSCamera.CampaignGame.Behavior
             args.optionLeaveType = GameMenuOption.LeaveType.HostileAction;
             if (MapEvent.PlayerMapEvent == null)
                 return false;
+
             MapEvent battle = PlayerEncounter.Battle;
             Settlement mapEventSettlement = battle?.MapEventSettlement;
-            return (battle == null || mapEventSettlement == null || !mapEventSettlement.IsFortification || !battle.IsSiegeAssault || PlayerSiege.PlayerSiegeEvent == null || PlayerSiege.PlayerSiegeEvent.BesiegerCamp.IsPreparationComplete) && battle != null && (battle.HasTroopsOnBothSides() || battle.IsSiegeAssault) && MapEvent.PlayerMapEvent.GetLeaderParty(PartyBase.MainParty.OpponentSide) != null && Hero.MainHero.IsWounded;
+
+            var non_battle_pred = (battle == null
+                || mapEventSettlement == null
+                || !mapEventSettlement.IsFortification
+                || !battle.IsSiegeAssault
+                || PlayerSiege.PlayerSiegeEvent == null
+                || PlayerSiege.PlayerSiegeEvent.BesiegerCamp.IsPreparationComplete);
+
+            var battle_pred = battle != null
+                && (battle.HasTroopsOnBothSides() || battle.IsSiegeAssault) 
+                && MapEvent.PlayerMapEvent.GetLeaderParty(PartyBase.MainParty.OpponentSide) != null;
+
+            return non_battle_pred && battle_pred;
         }
     }
 }

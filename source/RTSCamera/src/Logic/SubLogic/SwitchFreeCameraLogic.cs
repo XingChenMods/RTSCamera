@@ -67,7 +67,7 @@ namespace RTSCamera.Logic.SubLogic
             WatchBattleBehavior.WatchMode = false;
         }
 
-        public void OnFormationUnitsSpawned(Team team)
+        public void OnTeamDeployed(Team team)
         {
             if (team == Mission.PlayerTeam)
             {

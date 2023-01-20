@@ -73,11 +73,11 @@ namespace RTSCamera.Logic
             CampaignSkillLogic.AfterAddTeam(team);
         }
 
-        public override void OnFormationUnitsSpawned(Team team)
+        public override void OnTeamDeployed(Team team)
         {
-            base.OnFormationUnitsSpawned(team);
+            base.OnTeamDeployed(team);
 
-            SwitchFreeCameraLogic.OnFormationUnitsSpawned(team);
+            SwitchFreeCameraLogic.OnTeamDeployed(team);
         }
 
         public override void OnMissionTick(float dt)
