@@ -10,7 +10,6 @@ using TaleWorlds.MountAndBlade.View.MissionViews;
 namespace RTSCamera.CommandSystem
 {
     public class CommandSystemMissionStartingHandler : AMissionStartingHandler
-
     {
         public override void OnCreated(MissionView entranceView)
         {

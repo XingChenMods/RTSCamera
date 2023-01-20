@@ -64,21 +64,7 @@ namespace RTSCamera.Config
                             () => RTSCameraConfig.Get().LimitCameraDistance,
                             b =>
                             {
-                                if (b)
-                                {
-                                    RTSCameraConfig.Get().LimitCameraDistance = true;
-                                }
-                                else
-                                {
-                                    if (!NativeConfig.CheatMode)
-                                    {
-                                        Utility.DisplayLocalizedText("str_rts_camera_cheat_mode_required");
-                                    }
-                                    else
-                                    {
-                                        RTSCameraConfig.Get().LimitCameraDistance = false;
-                                    }
-                                }
+                                RTSCameraConfig.Get().LimitCameraDistance = b;
                             }));
                         cameraOptionCategory.AddOption(new NumericOptionViewModel(
                             GameTexts.FindText("str_rts_camera_camera_distance_limit"),

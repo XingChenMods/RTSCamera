@@ -57,21 +57,6 @@ namespace RTSCamera
                     prefix: new HarmonyMethod(
                         typeof(Patch_RangedSiegeWeaponView).GetMethod("HandleUserInput_Prefix",
                             BindingFlags.Static | BindingFlags.Public)));
-
-                _harmony.Patch(
-                    typeof(CommonVillagersCampaignBehavior).GetMethod("CheckIfConversationAgentIsEscortingThePlayer",
-                        BindingFlags.Instance | BindingFlags.NonPublic),
-                    prefix: new HarmonyMethod(typeof(Patch_CheckIfConversationAgentIsEscortingThePlayer).GetMethod(
-                        nameof(Patch_CheckIfConversationAgentIsEscortingThePlayer.Prefix_CheckIfConversationAgentIsEscortingThePlayer),
-                        BindingFlags.Static | BindingFlags.Public)));
-                _harmony.Patch(
-                    typeof(GuardsCampaignBehavior).GetMethod("CheckIfConversationAgentIsEscortingThePlayer",
-                        BindingFlags.Static | BindingFlags.NonPublic),
-                    prefix: new HarmonyMethod(typeof(Patch_CheckIfConversationAgentIsEscortingThePlayer).GetMethod(
-                        nameof(Patch_CheckIfConversationAgentIsEscortingThePlayer
-                            .Prefix_CheckIfConversationAgentIsEscortingThePlayer),
-                        BindingFlags.Static | BindingFlags.Public)));
-
                 _harmony.Patch(
                     typeof(ArenaPracticeFightMissionController).GetMethod("StartPractice",
                         BindingFlags.Instance | BindingFlags.NonPublic),
@@ -123,7 +108,7 @@ namespace RTSCamera
                 _successPatch &= Patch_MissionGauntletSpectatorControl.Patch();
                 _successPatch &= Patch_ScoreboardScreenWidget.Patch();
                 _successPatch &= Patch_Mission_UpdateSceneTimeSpeed.Patch();
-                _successPatch &= Patch_OrderOfBattleVM.Patch();
+                //_successPatch &= Patch_OrderOfBattleVM.Patch();
                 _successPatch &= Patch_MissionGauntletMainAgentEquipDropView.Patch();
                 _successPatch &= Patch_MissionGauntletMainAgentEquipmentControllerView.Patch();
                 _successPatch &= Patch_DeploymentMissionController.Patch();
