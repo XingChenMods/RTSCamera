@@ -10,7 +10,3 @@ source/*/obj/
 *.html
 steam_workshop_uploader.txt
 steam_appid.txt
-*/SteamWorkshopCreate.xml
-*/SteamWorkshopUpdate.xml
-*/PublishToSteamWorkshop.ps1
-*/UpdateToSteamWorkshop.ps1
