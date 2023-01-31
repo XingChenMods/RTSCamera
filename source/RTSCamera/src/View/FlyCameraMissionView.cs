@@ -194,8 +194,10 @@ namespace RTSCamera.View
             LockToAgent = true;
             typeof(MissionScreen).GetProperty("LastFollowedAgent")?.GetSetMethod(true)
                 ?.Invoke(MissionScreen, new object[] { agent });
+
             if (!_freeCameraLogic.IsSpectatorCamera)
                 _freeCameraLogic.SwitchCamera();
+
             Utility.SmoothMoveToAgent(MissionScreen, true, false);
         }
 

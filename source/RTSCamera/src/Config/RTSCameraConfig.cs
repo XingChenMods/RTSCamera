@@ -112,7 +112,7 @@ namespace RTSCamera.Config
 
         public bool SwitchTeamHotkeyEnabled;
 
-        public bool LimitCameraDistance = true;
+        public bool LimitCameraDistance = false;
 
         public float CameraDistanceLimitFactor = 1;
 

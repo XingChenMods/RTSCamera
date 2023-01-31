@@ -137,6 +137,7 @@ namespace RTSCamera.Logic.SubLogic
                 _isDeploymentFinishing = false;
                 if (agent.Formation == null)
                     return;
+
                 CurrentPlayerFormation = agent.Formation.FormationIndex;
             }
             else if (agent == Mission.MainAgent)
@@ -146,6 +147,7 @@ namespace RTSCamera.Logic.SubLogic
 
                 if (agent.Formation == null)
                     return;
+
                 CurrentPlayerFormation = agent.Formation.FormationIndex;
             }
         }
@@ -177,7 +179,9 @@ namespace RTSCamera.Logic.SubLogic
             else if (_config.AutoSetPlayerFormation == AutoSetPlayerFormation.Always ||
                      _config.AutoSetPlayerFormation == AutoSetPlayerFormation.DeploymentStage &&
                      (isDeploymentFinishing || _isDeploymentFinishing || Mission.Mode == MissionMode.Deployment))
+            {
                 Utility.SetPlayerFormationClass((FormationClass)_config.PlayerFormation);
+            }
         }
 
         private void OnMainAgentChanged(object sender, PropertyChangedEventArgs e)
@@ -198,6 +202,7 @@ namespace RTSCamera.Logic.SubLogic
                     }
                     if (Mission.MainAgent.Formation != null)
                         CurrentPlayerFormation = Mission.MainAgent.Formation.FormationIndex;
+
                     if (IsSpectatorCamera || WatchBattleBehavior.WatchMode)
                     {
                         UpdateMainAgentControllerInFreeCamera();
@@ -232,19 +237,21 @@ namespace RTSCamera.Logic.SubLogic
             {
                 if (_config.ControlAllyAfterDeath || IsSpectatorCamera)
                 {
-                    if (Utilities.Utility.IsBattleCombat(Mission) &&
-                        Mission.MainAgent.Character == CharacterObject.PlayerCharacter)
+                    if (Utilities.Utility.IsBattleCombat(Mission) && Mission.MainAgent.Character == CharacterObject.PlayerCharacter)
                         Utility.DisplayLocalizedText("str_rts_camera_player_dead", null, new Color(1, 0, 0));
+
                     // mask code in Mission.OnAgentRemoved so that formations will not be delegated to AI after player dead.
                     if (_controlTroopLogic.GetAgentToControl() != null)
                     {
                         affectedAgent.OnMainAgentWieldedItemChange = null;
                         bool shouldSmoothToAgent = Utility.BeforeSetMainAgent();
                         Mission.MainAgent = null;
+
                         // Set smooth move again if controls another agent instantly.
                         // Otherwise MissionScreen will reset camera elevate and bearing.
                         if (Mission.MainAgent != null && Mission.MainAgent.Controller == Agent.ControllerType.Player)
                             Utility.AfterSetMainAgent(shouldSmoothToAgent, _controlTroopLogic.MissionScreen);
+
                         // Restore the variables to initial state
                         else if (shouldSmoothToAgent)
                         {
