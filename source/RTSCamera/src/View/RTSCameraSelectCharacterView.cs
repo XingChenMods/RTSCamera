@@ -193,6 +193,7 @@ namespace RTSCamera.View
             var agent = Mission.RayCastForClosestAgent(rayBegin, rayEnd, out var distance, -1, 0.1f);
             if (agent != null && agent.IsMount)
                 agent = agent.RiderAgent ?? null;
+
             MouseOverAgent = agent;
             //if (MouseOverAgent != null && Mission.MainAgent != null)
             //{

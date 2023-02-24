@@ -38,17 +38,7 @@ namespace RTSCamera.CommandSystem.CampaignGame
         }
         private static bool CheckCanIssueChargeToFormationOrder()
         {
-            if (Campaign.Current == null)
-            {
-                return true;
-            }
-
-            var hero = GetHeroForTacticLevel();
-
-            if (hero == null)
-                return true;
-
-            return hero.GetSkillValue(DefaultSkills.Tactics) >= RequiredTacticsLevelToIssueChargeToFormationOrder;
+            return true;
         }
         public static Hero GetHeroForTacticLevel()
         {

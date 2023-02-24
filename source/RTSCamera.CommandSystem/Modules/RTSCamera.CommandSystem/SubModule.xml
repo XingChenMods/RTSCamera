@@ -2,7 +2,7 @@
 <Module>
   <Name value="RTS Camera Command System"/>
   <Id value="RTSCamera.CommandSystem"/>
-  <Version value="v4.1.22"/>
+  <Version value="v4.1.23"/>
   <SingleplayerModule value="true"/>
   <MultiplayerModule value="false"/>
   <DependedModules>
@@ -23,7 +23,6 @@
       </Tags>
     </SubModule>
   </SubModules>
-
   <Xmls>
     <XmlNode>
       <XmlName id="GameText" path="module_strings"/>
