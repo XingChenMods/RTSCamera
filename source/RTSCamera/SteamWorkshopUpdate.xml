@@ -12,8 +12,9 @@ Issues with this version could go to github Norbivar/RTSCamera/issues but I ain'
 
 Save often and take care.
 
-KNOWN crashes:
-- auto-switch on player death --> Hopefully fixed
+If you are upgrading from older versions and having problems:
+- be sure to download/install both modules (RTSCamera and the Command system), dunno' why though, some people mentioned it was more stable that way
+- try deleting all your RTSCam related config files (Documents\Mount and Blade II Bannerlord\Configs\RTSCamera)
 
 OLD Desc:
 
@@ -47,7 +48,7 @@ Credits where credit due: the original author and creator of RTSCamera: Izh
 links：
 Nexusmods: https://www.nexusmods.com/mountandblade2bannerlord/mods/355
 mountandblade.com.cn: https://bbs.mountblade.com.cn/thread-2061243-1-1.html"/>
-    <ChangeNotes Value="- fix attempt of CTD upon death + auto-switch character" />
+    <ChangeNotes Value="- character should no longer auto-charge upon leaving control" />
     <!-- Insert patch notes -->
     <Tags>
       <!-- You can use the following tags: -->
