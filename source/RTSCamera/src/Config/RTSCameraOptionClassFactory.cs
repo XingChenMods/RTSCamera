@@ -160,7 +160,7 @@ namespace RTSCamera.Config
                                 if (WatchBattleBehavior.WatchMode)
                                     return;
 
-                                Utility.SetMainAgentFormationClass((FormationClass)i);
+                                Utility.SetPlayerFormationClass((FormationClass)i);
                             }
                         }, () =>
                         {
@@ -213,7 +213,7 @@ namespace RTSCamera.Config
                             rtsCameraLogic.SwitchFreeCameraLogic.CurrentPlayerFormation = (FormationClass)formationClass;
                             if (WatchBattleBehavior.WatchMode)
                                 return;
-                            Utility.SetMainAgentFormationClass((FormationClass)formationClass);
+                            Utility.SetPlayerFormationClass((FormationClass)formationClass);
                             playerFormationOption.UpdateData(false);
                         }
                     }, () => (int)RTSCameraConfig.Get().AutoSetPlayerFormation, (int)AutoSetPlayerFormation.Count,

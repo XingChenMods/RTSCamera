@@ -173,14 +173,14 @@ namespace RTSCamera.Logic.SubLogic
             {
                 if (_isDeploymentFinishing || isDeploymentFinishing)
                 {
-                    Utility.SetMainAgentFormationClass(_formationClassInDeployment);
+                    Utility.SetPlayerFormationClass(_formationClassInDeployment);
                 }
             }
             else if (_config.AutoSetPlayerFormation == AutoSetPlayerFormation.Always ||
                      _config.AutoSetPlayerFormation == AutoSetPlayerFormation.DeploymentStage &&
                      (isDeploymentFinishing || _isDeploymentFinishing || Mission.Mode == MissionMode.Deployment))
             {
-                Utility.SetMainAgentFormationClass((FormationClass)_config.PlayerFormation);
+                Utility.SetPlayerFormationClass((FormationClass)_config.PlayerFormation);
             }
         }
 
