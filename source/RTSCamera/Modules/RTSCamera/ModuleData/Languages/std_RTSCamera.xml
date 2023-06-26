@@ -157,5 +157,7 @@
     <string id="RTSCamera_no_main_hero" text="Main hero doesn't exist" />
 
     <string id="RTSCamera_cheat_mode_required" text="Enable cheat mode to close this option." />
+
+    <string id="XingChenMods_fork_version" text="= XingChen Mods fork version =" />
   </strings>
 </base>

@@ -157,5 +157,7 @@
     <string id="RTSCamera_no_main_hero" text="玩家英雄不存在" />
 
     <string id="RTSCamera_cheat_mode_required" text="启用作弊模式后才可关闭该选项" />
+    
+    <string id="XingChenMods_fork_version" text="= 星辰制作组特供版 =" />
   </strings>
 </base>
